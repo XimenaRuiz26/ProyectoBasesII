@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="fondoAzulView" prefHeight="367.0" prefWidth="305.0" stylesheets="@Styles.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LoginAfiliadoController">
+   <children>
+      <Pane layoutX="14.0" layoutY="12.0" prefHeight="338.0" prefWidth="281.0">
+         <children>
+            <TextField fx:id="txtEmail" layoutX="12.0" layoutY="136.0" prefHeight="36.0" prefWidth="237.0" promptText="Email" text="bgain2@wiley.com" />
+            <PasswordField fx:id="txtPassword" layoutX="12.0" layoutY="195.0" prefHeight="43.0" prefWidth="237.0" promptText="Password" />
+            <Button layoutX="22.0" layoutY="262.0" mnemonicParsing="false" onAction="#ingresar" text="Ingresar" />
+            <Button layoutX="140.0" layoutY="262.0" mnemonicParsing="false" onAction="#abrirVentanaAfiliacion" prefHeight="41.0" prefWidth="101.0" text="Afíliate" />
+            <Text layoutX="12.0" layoutY="93.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ingreso" textAlignment="CENTER" wrappingWidth="237.0">
+               <fill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop color="#b2af00" />
+                        <Stop color="#55e82c" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </fill>
+               <font>
+                  <Font name="Yu Gothic UI Semibold" size="48.0" />
+               </font>
+            </Text>
+            <Button layoutX="203.0" mnemonicParsing="false" onAction="#atrasVentana" prefHeight="41.0" prefWidth="78.0" text="Atras" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

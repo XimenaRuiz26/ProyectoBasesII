@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="fondoAzulView" prefHeight="474.0" prefWidth="429.0" stylesheets="@Styles.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.DetallesVentaController">
+   <children>
+      <Pane layoutX="7.0" layoutY="7.0" prefHeight="497.0" prefWidth="462.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <GridPane gridLinesVisible="true" layoutX="31.0" layoutY="86.0" prefHeight="344.0" prefWidth="368.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Text fill="#fcfcfc" strokeType="OUTSIDE" strokeWidth="0.0" text="Id:" textAlignment="CENTER" wrappingWidth="186.2265625">
+                     <font>
+                        <Font name="Arial Black" size="16.0" />
+                     </font>
+                  </Text>
+                  <Text fill="#fcfcfc" strokeType="OUTSIDE" strokeWidth="0.0" text="Metodo Pago:" textAlignment="CENTER" wrappingWidth="184.7734375" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="Arial Black" size="16.0" />
+                     </font>
+                  </Text>
+                  <Text fill="#fcfcfc" strokeType="OUTSIDE" strokeWidth="0.0" text="Estado de Venta:" textAlignment="CENTER" wrappingWidth="185.3515625" GridPane.rowIndex="2">
+                     <font>
+                        <Font name="Arial Black" size="16.0" />
+                     </font>
+                  </Text>
+                  <Text fill="#fcfcfc" strokeType="OUTSIDE" strokeWidth="0.0" text="Id del Cliente:" textAlignment="CENTER" wrappingWidth="184.453125" GridPane.rowIndex="3">
+                     <font>
+                        <Font name="Arial Black" size="16.0" />
+                     </font>
+                  </Text>
+                  <Text fill="#fcfcfc" strokeType="OUTSIDE" strokeWidth="0.0" text="Id del Empleado:" textAlignment="CENTER" wrappingWidth="188.1484375" GridPane.rowIndex="4">
+                     <font>
+                        <Font name="Arial Black" size="16.0" />
+                     </font>
+                  </Text>
+                  <Text fill="#fcfcfc" strokeType="OUTSIDE" strokeWidth="0.0" text="Valor de la Venta:" textAlignment="CENTER" wrappingWidth="183.265625" GridPane.rowIndex="5">
+                     <font>
+                        <Font name="Arial Black" size="16.0" />
+                     </font>
+                  </Text>
+                  <Text fill="#fcfcfc" strokeType="OUTSIDE" strokeWidth="0.0" text="Fecha de la Venta:" textAlignment="CENTER" wrappingWidth="181.890625" GridPane.rowIndex="6">
+                     <font>
+                        <Font name="Arial Black" size="16.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="lbId" fill="#d0ff00" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="186.2265625" GridPane.columnIndex="1">
+                     <font>
+                        <Font name="Arial Black" size="16.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="lbMetodoPago" fill="#d0ff00" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="184.7734375" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="Arial Black" size="16.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="lbEstadoVenta" fill="#d0ff00" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="185.3515625" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                     <font>
+                        <Font name="Arial Black" size="16.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="lbIdCliente" fill="#d0ff00" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="184.453125" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                     <font>
+                        <Font name="Arial Black" size="16.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="lbIdEmpleado" fill="#d0ff00" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="188.1484375" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                     <font>
+                        <Font name="Arial Black" size="16.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="lbValorVenta" fill="#d0ff00" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="183.265625" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                     <font>
+                        <Font name="Arial Black" size="16.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="lbFechaVenta" fill="#d0ff00" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="181.890625" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                     <font>
+                        <Font name="Arial Black" size="16.0" />
+                     </font>
+                  </Text>
+               </children>
+            </GridPane>
+            <Text layoutX="14.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Detalles Venta" textAlignment="CENTER" wrappingWidth="398.0">
+               <fill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop color="#b2af00" />
+                        <Stop color="#55e82c" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </fill>
+               <font>
+                  <Font name="Book Antiqua" size="48.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
