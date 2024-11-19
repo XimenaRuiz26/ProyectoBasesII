@@ -1,4 +1,4 @@
-package model;
+package multinivel.model;
 
 public class EstadoEnvio {
 	private int id;

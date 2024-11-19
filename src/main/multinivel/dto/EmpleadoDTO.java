@@ -1,8 +1,8 @@
-package dto;
+package multinivel.dto;
 
 import java.sql.Date;
 
-import model.Empleado;
+import multinivel.model.Empleado;
 
 public class EmpleadoDTO {
 	private Empleado empleado;

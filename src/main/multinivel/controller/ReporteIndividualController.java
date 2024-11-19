@@ -1,12 +1,13 @@
-package controller;
+package multinivel.controller;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
-import connection.Aplicacion;
+import multinivel.connection.Aplicacion;
 
 public class ReporteIndividualController {
 	Aplicacion aplicacion;
@@ -39,12 +40,12 @@ public class ReporteIndividualController {
 		String reporte = "";
 		switch (numReporte) {
 		case 1:
-			enunciado = "Reporte de la cantidad de empleados\n"
+			enunciado = "Informe de la cantidad de empleados\n"
 					+ "que hay en cada nivel.";
 			reporte = aplicacion.reporte1();
 			break;
 		case 2:
-			enunciado = "Total de ventas por categor�a de producto y m�todo de pago";
+			enunciado = "Total de ventas por categoria de producto y metodo de pago";
 			reporte = aplicacion.reporte2();
 			break;
 		case 3:
@@ -56,7 +57,7 @@ public class ReporteIndividualController {
 			reporte = aplicacion.reporte4();
 			break;
 		case 5:
-			enunciado = "Total de ventas por estado de env�o y m�todo de env�o";
+			enunciado = "Total de ventas por estado de envio y metodo de envio";
 			reporte = aplicacion.reporte5();
 			break;
 		default:

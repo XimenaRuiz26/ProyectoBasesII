@@ -1,4 +1,4 @@
-package services;
+package multinivel.services;
 
 import java.sql.CallableStatement;
 import java.sql.Connection;
@@ -14,23 +14,18 @@ public class ReportesService {
 		String reporte = "";
 		try {
 			CallableStatement callableStatement = cx.prepareCall("{? = call CANTIDAD_EMPLEADOS_NIVELES()}");
-
 			callableStatement.registerOutParameter(1, OracleTypes.CURSOR); // El primer par�metro es el cursor de salida
-
 			callableStatement.execute();
 			ResultSet resultSet = (ResultSet) callableStatement.getObject(1);
 			resultSet.next();
-
 			reporte += "|  Nivel Afiliado: "+resultSet.getInt("'Afiliado'_CANTIDAD")+"  |  \n";
 			reporte += "|  Nivel Bronce: "+resultSet.getInt("'Bronce'_CANTIDAD")+"  |  \n";
 			reporte += "|  Nivel Cobre: "+resultSet.getInt("'Cobre'_CANTIDAD")+"  |  \n";
 			reporte += "|  Nivel Plata: "+resultSet.getInt("'Plata'_CANTIDAD")+"  |  \n";
 			reporte += "|  Nivel Oro: "+resultSet.getInt("'Oro'_CANTIDAD")+"  |  \n";
 			reporte += "|  Nivel Diamante: "+resultSet.getInt("'Diamante'_CANTIDAD")+"  |\n";
-
 			resultSet.close();
 			callableStatement.close();
-
 			return reporte;
 		} catch (SQLException e) {
 			JOptionPane.showMessageDialog(null,
@@ -40,7 +35,6 @@ public class ReportesService {
 		}
 		return reporte;
 	}
-
 	public static String reporte2(Connection cx) {
 		String reporte = "Nombre	|	Descripcion		| Total Ventas\n\n";
 		try {
@@ -56,7 +50,6 @@ public class ReportesService {
 				reporte += resultSet.getString("DESCRIPCION")+" | ";
 				reporte += resultSet.getInt("TOTAL_VENTAS")+"\n";
 			}
-
 			resultSet.close();
 			callableStatement.close();
 

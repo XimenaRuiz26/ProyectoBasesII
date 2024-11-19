@@ -1,4 +1,4 @@
-package services;
+package multinivel.services;
 
 import java.sql.Connection;
 import java.sql.Date;
@@ -10,8 +10,8 @@ import java.util.ArrayList;
 
 import javax.swing.JOptionPane;
 
-import model.Empleado;
-import model.NivelEmpleado;
+import multinivel.model.Empleado;
+import multinivel.model.NivelEmpleado;
 
 public class EmpleadoService {
 	public static ArrayList<Empleado> obtenerListaEmpleados(Connection cx){
@@ -21,7 +21,6 @@ public class EmpleadoService {
 		    Statement statement;
 			statement = cx.createStatement();
 			ResultSet result = statement.executeQuery(query);
-
 			int id;
 			NivelEmpleado nivel_empleado;
 			Date fecha_nacimiento;
@@ -31,7 +30,6 @@ public class EmpleadoService {
 			String correo;
 			String telefono;
 			Empleado afiliador;
-
 			while(result.next()){
 				id = result.getInt("id");;
 				nivel_empleado = NivelEmpleadoService.obtenerNivelEmpleadoById(cx, id);
@@ -44,12 +42,10 @@ public class EmpleadoService {
 				afiliador = obtenerEmpleadoById(cx, result.getInt("id_afiliador"));
 				Empleado empleado = new Empleado(id, nivel_empleado, fecha_nacimiento, nombres, apellidos,
 						direccion, correo, telefono, afiliador);
-				listaEmpleados.add(empleado);
-			}
+				listaEmpleados.add(empleado);}
 			result.close();
 		} catch (SQLException e1) {
-			e1.printStackTrace();
-		}
+			e1.printStackTrace();}
 		return listaEmpleados;
 	}
 
@@ -60,7 +56,6 @@ public class EmpleadoService {
 		    Statement statement;
 			statement = cx.createStatement();
 			ResultSet result = statement.executeQuery(query);
-
 			int id;
 			NivelEmpleado nivel_empleado;
 			Date fecha_nacimiento;
@@ -80,14 +75,11 @@ public class EmpleadoService {
 				correo = result.getString("correo");
 				telefono = result.getString("telefono");
 				afiliador = obtenerEmpleadoById(cx, result.getInt("id_afiliador"));
-				empleado = new Empleado(id, nivel_empleado, fecha_nacimiento, nombres, apellidos, direccion, correo, telefono, afiliador);
-			}
+				empleado = new Empleado(id, nivel_empleado, fecha_nacimiento, nombres, apellidos, direccion, correo, telefono, afiliador);}
 			result.close();
-
 		} catch (SQLException e1) {
 			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		}
+			e1.printStackTrace();}
 		return empleado;
 	}
 

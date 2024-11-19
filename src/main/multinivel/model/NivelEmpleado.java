@@ -1,4 +1,4 @@
-package model;
+package multinivel.model;
 
 public class NivelEmpleado {
 	private int id;

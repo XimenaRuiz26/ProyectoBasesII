@@ -1,11 +1,11 @@
-package services;
+package multinivel.services;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-import model.DescripcionRequisitos;
+import multinivel.model.DescripcionRequisitos;
 
 public class DescripcionRequisitosService {
 	public static DescripcionRequisitos obtenerDescripcionRequisitosById(Connection cx, int idBuscar){

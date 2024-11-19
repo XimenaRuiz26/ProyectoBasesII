@@ -1,4 +1,4 @@
-package services;
+package multinivel.services;
 
 import java.sql.CallableStatement;
 import java.sql.Connection;
@@ -13,12 +13,12 @@ import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
 import javafx.collections.ObservableList;
-import dto.DetalleVentaDTO;
-import model.Cliente;
-import model.Empleado;
-import model.EstadoVenta;
-import model.MetodoPago;
-import model.Venta;
+import multinivel.dto.DetalleVentaDTO;
+import multinivel.model.Cliente;
+import multinivel.model.Empleado;
+import multinivel.model.EstadoVenta;
+import multinivel.model.MetodoPago;
+import multinivel.model.Venta;
 import oracle.jdbc.OracleTypes;
 
 public class VentaService {
@@ -126,23 +126,17 @@ public class VentaService {
 					+ "VENTA (ID, ID_METODO_PAGO, ID_ESTADO_VENTA, ID_CLIENTE,"
 					+ "ID_EMPLEADO,FECHA_VENTA,VALOR_VENTA) "
 					+ "VALUES(NULL, ?, ?, ?, ?, ?, ?)");
-
 			ps.setInt(1, idMetodoPago);
 			ps.setInt(2, 1);
 			ps.setInt(3, idCliente);
 			ps.setInt(4, idEmpleado);
 			ps.setDate(5, Date.valueOf(LocalDate.now()));
 			ps.setFloat(6, 0);
-
 			ps.executeUpdate();
 			ps.close();
-
 			int id_venta = obtenerUltimoIdInsertado(cx);
-
 			for (DetalleVentaDTO detalleVentaDTO : listaDetallesVentaData) {
-				DetalleVentaService.agregarDetalleVenta(cx, id_venta, detalleVentaDTO);
-			}
-
+				DetalleVentaService.agregarDetalleVenta(cx, id_venta, detalleVentaDTO);}
 			return true;
 		} catch (SQLException e) {
 			JOptionPane.showMessageDialog(null,
@@ -173,6 +167,8 @@ public class VentaService {
 		return ultimo_id_insertado;
 	}
 
+
+	//REVISAR ESTE
 	public static float obtenerTotalComisionesDirectas(Connection cx, int id_empleado) {
 		float total_comisiones_directas = 0;
 		try {
@@ -200,6 +196,8 @@ public class VentaService {
 		}
 		return total_comisiones_directas;
 	}
+
+
 
 	public static float obtenerTotalComisionesIndirectas(Connection cx, int id_empleado) {
 		float total_comisiones_indirectas = 0;

@@ -1,4 +1,4 @@
-package controller;
+package multinivel.controller;
 
 import java.net.URL;
 import java.sql.Date;
@@ -11,14 +11,15 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.text.Text;
-import connection.Aplicacion;
-import dto.EmpleadoDTO;
-import dto.MapeoDTO;
-import model.Empleado;
+import multinivel.connection.Aplicacion;
+import multinivel.dto.EmpleadoDTO;
+import multinivel.dto.MapeoDTO;
+import multinivel.model.Empleado;
 
 public class PerfilAfiliadoController {
 	Aplicacion aplicacion;
@@ -32,25 +33,25 @@ public class PerfilAfiliadoController {
     private URL location;
 
     @FXML
-    private Text lbIdAfiliador;
+    private Label lbIdAfiliador;
 
     @FXML
-    private Text lbNombres;
+    private Label lbNombres;
 
     @FXML
-    private Text lbComisionesDirectas;
+    private Label lbComisionesDirectas;
 
     @FXML
-    private Text lbComisionesIndirectas;
+    private Label lbComisionesIndirectas;
 
     @FXML
-    private Text lbTotalVendido;
+    private Label lbTotalVendido;
 
     @FXML
     private TableColumn<String, EmpleadoDTO> colNombresAfiliado;
 
     @FXML
-    private Text lbNivelEmpleado;
+    private Label lbNivelEmpleado;
 
     @FXML
     private TableColumn<String, EmpleadoDTO> colCorreoAfiliado;
@@ -74,10 +75,10 @@ public class PerfilAfiliadoController {
     private TableView<EmpleadoDTO> tableAfiliados;
 
     @FXML
-    private Text lbNumeroVentas;
+    private Label lbNumeroVentas;
 
     @FXML
-    private Text lbEmail;
+    private Label lbEmail;
 
     @FXML
     private TableColumn<String, EmpleadoDTO> colApellidosAfiliado;
@@ -86,7 +87,7 @@ public class PerfilAfiliadoController {
     private TableColumn<String, EmpleadoDTO> colTelefonoAfiliado;
 
     @FXML
-    private Text lbIdAfiliado;
+    private Label lbIdAfiliado;
 
     @FXML
     void atrasVentana(ActionEvent event) {
@@ -102,9 +103,9 @@ public class PerfilAfiliadoController {
 
     @FXML
     void desafiliarse(ActionEvent event) {
-    	int verificacion = JOptionPane.showConfirmDialog(null, "�Est�s seguro de que deseas desafiliarte?\r\n"
+    	int verificacion = JOptionPane.showConfirmDialog(null, "Estas seguro de que deseas desafiliarte?\r\n"
     			+ "Ten en cuenta que si te desafilias y deseas volver en un futuro\r\n"
-    			+ "volver�s a comenzar en el nivel inicial.");
+    			+ "volveras a comenzar en el nivel inicial.");
     	if (verificacion == 0) {
     		int idAfiliado = Integer.parseInt(lbIdAfiliado.getText());
 			boolean eliminado = aplicacion.desafiliar(idAfiliado);

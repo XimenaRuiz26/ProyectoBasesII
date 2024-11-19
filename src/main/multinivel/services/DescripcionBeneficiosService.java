@@ -1,11 +1,11 @@
-package services;
+package multinivel.services;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-import model.DescripcionBeneficios;
+import multinivel.model.DescripcionBeneficios;
 
 public class DescripcionBeneficiosService {
 	public static DescripcionBeneficios obtenerDescripcionBeneficiosById(Connection cx, int idBuscar){

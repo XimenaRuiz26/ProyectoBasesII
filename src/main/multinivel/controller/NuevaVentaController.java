@@ -1,4 +1,4 @@
-package controller;
+package multinivel.controller;
 
 import java.net.URL;
 import java.util.ArrayList;
@@ -10,19 +10,16 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.text.Text;
-import connection.Aplicacion;
-import dto.DetalleVentaDTO;
-import dto.MapeoDTO;
-import dto.ProductoDTO;
-import model.Cliente;
-import model.MetodoPago;
-import model.Producto;
+import multinivel.connection.Aplicacion;
+import multinivel.dto.DetalleVentaDTO;
+import multinivel.dto.MapeoDTO;
+import multinivel.dto.ProductoDTO;
+import multinivel.model.Cliente;
+import multinivel.model.MetodoPago;
+import multinivel.model.Producto;
 
 public class NuevaVentaController {
 	Aplicacion aplicacion;
@@ -46,7 +43,7 @@ public class NuevaVentaController {
     private TextField txtCantidadProducto;
 
     @FXML
-    private Text lbValorVenta;
+    private Label IbValorVenta;
 
     @FXML
     private TableView<ProductoDTO> tableProductosInventario;
@@ -128,7 +125,7 @@ public class NuevaVentaController {
 		txtCantidadProducto.setText("");
 		txtIdCliente.setText("");
 		comboMetodoPago.setValue(null);
-		lbValorVenta.setText("0");
+		IbValorVenta.setText("0");
 	}
 
 	private boolean validarVenta(String idCliente, MetodoPago metodoPago) {
@@ -168,7 +165,7 @@ public class NuevaVentaController {
 		for (DetalleVentaDTO detalleVentaDTO : listaDetallesVentaData) {
 			nuevoValorVenta += detalleVentaDTO.getSubtotal();
 		}
-		lbValorVenta.setText(String.valueOf(nuevoValorVenta));
+		IbValorVenta.setText(String.valueOf(nuevoValorVenta));
 	}
 
 	private void agregarDetalleVenta(int cantidadAgregar) {

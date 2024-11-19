@@ -1,12 +1,12 @@
-package controller;
+package multinivel.controller;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 
 import javafx.fxml.FXML;
 import javafx.scene.text.Text;
-import connection.Aplicacion;
-import model.Venta;
+import multinivel.connection.Aplicacion;
+import multinivel.model.Venta;
 
 public class DetallesVentaController {
 	Aplicacion aplicacion;

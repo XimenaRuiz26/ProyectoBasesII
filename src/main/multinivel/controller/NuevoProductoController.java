@@ -1,4 +1,4 @@
-package controller;
+package multinivel.controller;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -12,8 +12,8 @@ import javafx.fxml.FXML;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
-import connection.Aplicacion;
-import model.CategoriaProducto;
+import multinivel.connection.Aplicacion;
+import multinivel.model.CategoriaProducto;
 
 public class NuevoProductoController {
 	Aplicacion aplicacion;
@@ -38,7 +38,7 @@ public class NuevoProductoController {
     private TextField txtFabricante;
 
     @FXML
-    private TextArea txtDescripcion;
+    private TextField txtDescripcion;
 
     @FXML
     private TextField txtPrecioUnitario;

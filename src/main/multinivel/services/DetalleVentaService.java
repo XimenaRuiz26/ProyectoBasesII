@@ -1,4 +1,4 @@
-package services;
+package multinivel.services;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -7,10 +7,12 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
-import dto.DetalleVentaDTO;
-import model.DetalleVenta;
-import model.Producto;
-import model.Venta;
+import multinivel.dto.DetalleVentaDTO;
+import multinivel.model.DetalleVenta;
+import multinivel.model.Producto;
+import multinivel.model.Venta;
+
+import static multinivel.services.VentaService.obtenerVentaById;
 
 public class DetalleVentaService {
 	public static ArrayList<DetalleVenta> obtenerListaDetallesVenta(Connection cx){
@@ -27,7 +29,7 @@ public class DetalleVentaService {
 			float subtotal;
 
 			while(result.next()){
-				venta = services.VentaService.obtenerVentaById(cx, result.getInt("id_venta"));
+				venta = obtenerVentaById(cx, result.getInt("id_venta"));
 				producto = ProductoService.obtenerProductoById(cx, result.getInt("id_producto"));
 				unidades = result.getInt("unidades");
 				subtotal = result.getFloat("subtotal");
@@ -59,7 +61,7 @@ public class DetalleVentaService {
 			float subtotal;
 
 			while(result.next()){
-				venta = VentaService.obtenerVentaById(cx, result.getInt("id_venta"));
+				venta = obtenerVentaById(cx, result.getInt("id_venta"));
 				producto = ProductoService.obtenerProductoById(cx, result.getInt("id_producto"));
 				unidades = result.getInt("unidades");
 				subtotal = result.getFloat("subtotal");
@@ -91,7 +93,7 @@ public class DetalleVentaService {
 			float subtotal;
 
 			while(result.next()){
-				venta = VentaService.obtenerVentaById(cx, result.getInt("id_venta"));
+				venta = obtenerVentaById(cx, result.getInt("id_venta"));
 				producto = ProductoService.obtenerProductoById(cx, result.getInt("id_producto"));
 				unidades = result.getInt("unidades");
 				subtotal = result.getFloat("subtotal");

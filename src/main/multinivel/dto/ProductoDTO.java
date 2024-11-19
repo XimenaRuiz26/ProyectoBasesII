@@ -1,5 +1,5 @@
-package dto;
-import model.Producto;
+package multinivel.dto;
+import multinivel.model.Producto;
 
 public class ProductoDTO {
 	private Producto producto;

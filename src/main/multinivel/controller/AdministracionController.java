@@ -1,11 +1,11 @@
-package controller;
+package multinivel.controller;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import connection.Aplicacion;
+import multinivel.connection.Aplicacion;
 
 public class AdministracionController {
 	Aplicacion aplicacion;

@@ -1,4 +1,4 @@
-package services;
+package multinivel.services;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -7,8 +7,8 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
-import model.CategoriaProducto;
-import model.Producto;
+import multinivel.model.CategoriaProducto;
+import multinivel.model.Producto;
 
 public class ProductoService {
 	public static ArrayList<Producto> obtenerListaProductos(Connection cx){
@@ -18,7 +18,6 @@ public class ProductoService {
 		    Statement statement;
 			statement = cx.createStatement();
 			ResultSet result = statement.executeQuery(query);
-
 			int id;
 			CategoriaProducto categoria;
 			int unidades_disponibles;
@@ -26,7 +25,6 @@ public class ProductoService {
 			String nombre;
 			String descripcion;
 			String fabricante;
-
 			while(result.next()){
 				id = result.getInt("id");
 				categoria = CategoriaProductoService.obtenerCategoriaById(cx, result.getInt("id_categoria"));
@@ -36,14 +34,11 @@ public class ProductoService {
 				descripcion = result.getString("descripcion");
 				fabricante = result.getString("fabricante");
 				Producto producto = new Producto(id, categoria, unidades_disponibles, precio_unitario, nombre, descripcion, fabricante);
-				listaProductos.add(producto);
-			}
+				listaProductos.add(producto);}
 			result.close();
-
 		} catch (SQLException e1) {
 			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		}
+			e1.printStackTrace();}
 		return listaProductos;
 	}
 
@@ -54,7 +49,6 @@ public class ProductoService {
 		    Statement statement;
 			statement = cx.createStatement();
 			ResultSet result = statement.executeQuery(query);
-
 			int id;
 			CategoriaProducto categoria;
 			int unidades_disponibles;
@@ -62,7 +56,6 @@ public class ProductoService {
 			String nombre;
 			String descripcion;
 			String fabricante;
-
 			while(result.next()){
 				id = result.getInt("id");
 				categoria = CategoriaProductoService.obtenerCategoriaById(cx, result.getInt("id_categoria"));
@@ -71,14 +64,10 @@ public class ProductoService {
 				nombre = result.getString("nombre");
 				descripcion = result.getString("descripcion");
 				fabricante = result.getString("fabricante");
-
-				producto = new Producto(id, categoria, unidades_disponibles, precio_unitario, nombre, descripcion, fabricante);
-			}
-
+				producto = new Producto(id, categoria, unidades_disponibles, precio_unitario, nombre, descripcion, fabricante);}
 		} catch (SQLException e1) {
 			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		}
+			e1.printStackTrace();}
 		return producto;
 	}
 

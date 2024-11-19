@@ -1,4 +1,4 @@
-package controller;
+package multinivel.controller;
 
 import java.net.URL;
 import java.util.ArrayList;
@@ -13,10 +13,10 @@ import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
-import connection.Aplicacion;
-import dto.MapeoDTO;
-import dto.ProductoDTO;
-import model.Producto;
+import multinivel.connection.Aplicacion;
+import multinivel.dto.MapeoDTO;
+import multinivel.dto.ProductoDTO;
+import multinivel.model.Producto;
 
 public class InventarioController {
 	Aplicacion aplicacion;
@@ -65,7 +65,7 @@ public class InventarioController {
     @FXML
     void quitarProducto(ActionEvent event) {
     	if (productoSeleccionado != null) {
-    		int verificacion = JOptionPane.showConfirmDialog(null, "�Est�s seguro de que desea eliminar el producto?\r\n");
+    		int verificacion = JOptionPane.showConfirmDialog(null, "Estas seguro de que desea eliminar el producto?\r\n");
         	if (verificacion == 0) {
         		aplicacion.eliminarProductoById(productoSeleccionado.getId());
         		listaProductosData.remove(productoSeleccionado);

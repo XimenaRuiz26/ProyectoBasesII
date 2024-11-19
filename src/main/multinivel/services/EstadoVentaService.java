@@ -1,11 +1,11 @@
-package services;
+package multinivel.services;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-import model.EstadoVenta;
+import multinivel.model.EstadoVenta;
 
 public class EstadoVentaService {
 	public static EstadoVenta obtenerEstadoVentaById(Connection cx, int idBuscar){

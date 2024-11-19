@@ -1,8 +1,8 @@
-package controller;
+package multinivel.controller;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import connection.Aplicacion;
+import multinivel.connection.Aplicacion;
 
 public class InicioController {
 	Aplicacion aplicacion;

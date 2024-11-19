@@ -1,4 +1,4 @@
-package model;
+package multinivel.model;
 
 import java.sql.Date;
 

@@ -1,4 +1,4 @@
-package controller;
+package multinivel.controller;
 
 import java.net.URL;
 import java.sql.Date;
@@ -14,10 +14,10 @@ import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
-import connection.Aplicacion;
-import dto.EmpleadoDTO;
-import dto.MapeoDTO;
-import model.Empleado;
+import multinivel.connection.Aplicacion;
+import multinivel.dto.EmpleadoDTO;
+import multinivel.dto.MapeoDTO;
+import multinivel.model.Empleado;
 
 public class RedController {
 	Aplicacion aplicacion;
@@ -95,7 +95,7 @@ public class RedController {
 
     @FXML
     void desafiliar(ActionEvent event) {
-    	int verificacion = JOptionPane.showConfirmDialog(null, "�Est�s seguro de que desea desafiliar al empleado?");
+    	int verificacion = JOptionPane.showConfirmDialog(null, "Estas seguro de que desea desafiliar al empleado?");
     	if (verificacion == 0) {
     		int idEmpleado = empleadoSeleccionado.getId();
     		boolean eliminado = aplicacion.desafiliar(idEmpleado);

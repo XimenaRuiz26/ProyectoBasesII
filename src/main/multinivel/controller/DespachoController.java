@@ -1,4 +1,4 @@
-package controller;
+package multinivel.controller;
 
 import java.net.URL;
 import java.sql.Date;
@@ -14,11 +14,11 @@ import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
-import connection.Aplicacion;
-import model.Envio;
-import model.EstadoEnvio;
-import model.MetodoEnvio;
-import model.Venta;
+import multinivel.connection.Aplicacion;
+import multinivel.model.Envio;
+import multinivel.model.EstadoEnvio;
+import multinivel.model.MetodoEnvio;
+import multinivel.model.Venta;
 
 public class DespachoController {
 	Aplicacion aplicacion;
@@ -79,7 +79,6 @@ public class DespachoController {
     	 this.colFechaEnvio.setCellValueFactory(new PropertyValueFactory<>("fecha_envio"));
     	 this.colId.setCellValueFactory(new PropertyValueFactory<>("id"));
     	 this.colMetodo.setCellValueFactory(new PropertyValueFactory<>("metodo_envio"));
-
 		 tableEnvios.getSelectionModel().selectedItemProperty().addListener((obs,oldSelection,newSelection)-> {
 			 envioSeleccionado = newSelection;
 		 });

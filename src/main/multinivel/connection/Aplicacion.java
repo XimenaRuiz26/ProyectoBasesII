@@ -1,11 +1,11 @@
-package connection;
+package multinivel.connection;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.Date;
 import java.util.ArrayList;
 
-import controller.ActualizarProductoController;
-import dto.DetalleVentaDTO;
+import multinivel.controller.ActualizarProductoController;
+import multinivel.dto.DetalleVentaDTO;
 import javafx.application.Application;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
@@ -14,34 +14,34 @@ import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
-import model.CategoriaProducto;
-import model.Producto;
-import controller.AdministracionController;
-import controller.AfiliacionController;
-import controller.DespachoController;
-import controller.DetallesVentaController;
-import controller.InicioController;
-import controller.InventarioController;
-import controller.LoginAfiliadoController;
-import controller.NuevaVentaController;
-import controller.NuevoProductoController;
-import controller.PerfilAfiliadoController;
-import controller.RedController;
-import controller.ReporteIndividualController;
-import controller.ReportesController;
-import model.Cliente;
-import model.Empleado;
-import model.Envio;
-import model.MetodoPago;
-import model.Venta;
-import services.CategoriaProductoService;
-import services.ClienteService;
-import services.EmpleadoService;
-import services.EnvioService;
-import services.MetodoPagoService;
-import services.ProductoService;
-import services.ReportesService;
-import services.VentaService;
+import multinivel.model.CategoriaProducto;
+import multinivel.model.Producto;
+import multinivel.controller.AdministracionController;
+import multinivel.controller.AfiliacionController;
+import multinivel.controller.DespachoController;
+import multinivel.controller.DetallesVentaController;
+import multinivel.controller.InicioController;
+import multinivel.controller.InventarioController;
+import multinivel.controller.LoginAfiliadoController;
+import multinivel.controller.NuevaVentaController;
+import multinivel.controller.NuevoProductoController;
+import multinivel.controller.PerfilAfiliadoController;
+import multinivel.controller.RedController;
+import multinivel.controller.ReporteIndividualController;
+import multinivel.controller.ReportesController;
+import multinivel.model.Cliente;
+import multinivel.model.Empleado;
+import multinivel.model.Envio;
+import multinivel.model.MetodoPago;
+import multinivel.model.Venta;
+import multinivel.services.CategoriaProductoService;
+import multinivel.services.ClienteService;
+import multinivel.services.EmpleadoService;
+import multinivel.services.EnvioService;
+import multinivel.services.MetodoPagoService;
+import multinivel.services.ProductoService;
+import multinivel.services.ReportesService;
+import multinivel.services.VentaService;
 
 public class Aplicacion extends Application{
 	private Stage primaryStage;
@@ -50,7 +50,7 @@ public class Aplicacion extends Application{
 	@Override
 	public void start(Stage primaryStage) throws IOException {
 		this.primaryStage = primaryStage;
-		this.primaryStage.setTitle("Bobbie Beauty");
+		this.primaryStage.setTitle("Belleza Selecta");
 		//this.primaryStage.getIcons().add(new Image("file:src/main/multinivel/view/images/logo.png"));
 		mostrarInicio();
 	}
@@ -68,7 +68,7 @@ public class Aplicacion extends Application{
 	public void mostrarInicio() {
 	    try {
 	        FXMLLoader loader = new FXMLLoader();
-	        loader.setLocation(Aplicacion.class.getResource("/view/InicioView.fxml"));
+	        loader.setLocation(Aplicacion.class.getResource("/multinivel/view/InicioView.fxml"));
 
 	        AnchorPane rootLayout = (AnchorPane)loader.load();
 
@@ -79,6 +79,12 @@ public class Aplicacion extends Application{
 	        primaryStage.setScene(scene);
 	        primaryStage.setTitle("Inicio");
 	        primaryStage.setResizable(false);
+			javafx.geometry.Rectangle2D screenBounds = javafx.stage.Screen.getPrimary().getVisualBounds();
+
+			// Calcular la posición centrada
+			primaryStage.setX((screenBounds.getWidth() - rootLayout.getPrefWidth()) / 2);
+			primaryStage.setY((screenBounds.getHeight() - rootLayout.getPrefHeight()) / 2);
+
 	        primaryStage.show();
 	    } catch (IOException e) {
 	        e.printStackTrace();
@@ -88,7 +94,7 @@ public class Aplicacion extends Application{
 	public void abrirVentanaAdministracion() {
 		try {
 	        FXMLLoader loader = new FXMLLoader();
-	        loader.setLocation(Aplicacion.class.getResource("/view/AdministracionView.fxml"));
+	        loader.setLocation(Aplicacion.class.getResource("/multinivel/view/AdministracionView.fxml"));
 
 	        AnchorPane rootLayout = (AnchorPane)loader.load();
 
@@ -99,6 +105,11 @@ public class Aplicacion extends Application{
 	        primaryStage.setScene(scene);
 	        primaryStage.setTitle("Administracion");
 	        primaryStage.setResizable(false);
+			javafx.geometry.Rectangle2D screenBounds = javafx.stage.Screen.getPrimary().getVisualBounds();
+
+			// Calcular la posición centrada
+			primaryStage.setX((screenBounds.getWidth() - rootLayout.getPrefWidth()) / 2);
+			primaryStage.setY((screenBounds.getHeight() - rootLayout.getPrefHeight()) / 2);
 	        primaryStage.show();
 	    } catch (IOException e) {
 	        e.printStackTrace();
@@ -108,7 +119,7 @@ public class Aplicacion extends Application{
 	public void abrirVentanaLoginAfiliado() {
 		try {
 	        FXMLLoader loader = new FXMLLoader();
-	        loader.setLocation(Aplicacion.class.getResource("/view/LoginAfiliadoView.fxml"));
+	        loader.setLocation(Aplicacion.class.getResource("/multinivel/view/LoginAfiliadoView.fxml"));
 
 	        AnchorPane rootLayout = (AnchorPane)loader.load();
 
@@ -119,6 +130,11 @@ public class Aplicacion extends Application{
 	        primaryStage.setScene(scene);
 	        primaryStage.setTitle("Login Afiliado");
 	        primaryStage.setResizable(false);
+			javafx.geometry.Rectangle2D screenBounds = javafx.stage.Screen.getPrimary().getVisualBounds();
+
+			// Calcular la posición centrada
+			primaryStage.setX((screenBounds.getWidth() - rootLayout.getPrefWidth()) / 2);
+			primaryStage.setY((screenBounds.getHeight() - rootLayout.getPrefHeight()) / 2);
 	        primaryStage.show();
 	    } catch (IOException e) {
 	        e.printStackTrace();
@@ -128,7 +144,7 @@ public class Aplicacion extends Application{
 	public void abrirVentanaInventario() {
 		try {
 	        FXMLLoader loader = new FXMLLoader();
-	        loader.setLocation(Aplicacion.class.getResource("/view/InventarioView.fxml"));
+	        loader.setLocation(Aplicacion.class.getResource("/multinivel/view/InventarioView.fxml"));
 
 	        AnchorPane rootLayout = (AnchorPane)loader.load();
 
@@ -139,6 +155,11 @@ public class Aplicacion extends Application{
 	        primaryStage.setScene(scene);
 	        primaryStage.setTitle("Inventario");
 	        primaryStage.setResizable(false);
+			javafx.geometry.Rectangle2D screenBounds = javafx.stage.Screen.getPrimary().getVisualBounds();
+
+			// Calcular la posición centrada
+			primaryStage.setX((screenBounds.getWidth() - rootLayout.getPrefWidth()) / 2);
+			primaryStage.setY((screenBounds.getHeight() - rootLayout.getPrefHeight()) / 2);
 	        primaryStage.show();
 	    } catch (IOException e) {
 	        e.printStackTrace();
@@ -148,7 +169,7 @@ public class Aplicacion extends Application{
 	public void abrirVentanaDespachos() {
 		try {
 	        FXMLLoader loader = new FXMLLoader();
-	        loader.setLocation(Aplicacion.class.getResource("/view/DespachoView.fxml"));
+	        loader.setLocation(Aplicacion.class.getResource("/multinivel/view/DespachoView.fxml"));
 
 	        AnchorPane rootLayout = (AnchorPane)loader.load();
 
@@ -159,6 +180,11 @@ public class Aplicacion extends Application{
 	        primaryStage.setScene(scene);
 	        primaryStage.setTitle("Despacho");
 	        primaryStage.setResizable(false);
+			javafx.geometry.Rectangle2D screenBounds = javafx.stage.Screen.getPrimary().getVisualBounds();
+
+			// Calcular la posición centrada
+			primaryStage.setX((screenBounds.getWidth() - rootLayout.getPrefWidth()) / 2);
+			primaryStage.setY((screenBounds.getHeight() - rootLayout.getPrefHeight()) / 2);
 	        primaryStage.show();
 	    } catch (IOException e) {
 	        e.printStackTrace();
@@ -168,7 +194,7 @@ public class Aplicacion extends Application{
 	public void abrirVentanaRed() {
 		try {
 	        FXMLLoader loader = new FXMLLoader();
-	        loader.setLocation(Aplicacion.class.getResource("/view/RedView.fxml"));
+	        loader.setLocation(Aplicacion.class.getResource("/multinivel/view/RedView.fxml"));
 
 	        AnchorPane rootLayout = (AnchorPane)loader.load();
 
@@ -179,6 +205,11 @@ public class Aplicacion extends Application{
 	        primaryStage.setScene(scene);
 	        primaryStage.setTitle("Perfil Afiliado");
 	        primaryStage.setResizable(false);
+			javafx.geometry.Rectangle2D screenBounds = javafx.stage.Screen.getPrimary().getVisualBounds();
+
+			// Calcular la posición centrada
+			primaryStage.setX((screenBounds.getWidth() - rootLayout.getPrefWidth()) / 2);
+			primaryStage.setY((screenBounds.getHeight() - rootLayout.getPrefHeight()) / 2);
 	        primaryStage.show();
 	    } catch (IOException e) {
 	        e.printStackTrace();
@@ -189,7 +220,7 @@ public class Aplicacion extends Application{
 	public void abrirVentanaPerfilAfiliado(Empleado empleado) {
 		try {
 	        FXMLLoader loader = new FXMLLoader();
-	        loader.setLocation(Aplicacion.class.getResource("/view/PerfilAfiliadoView.fxml"));
+	        loader.setLocation(Aplicacion.class.getResource("/multinivel/view/PerfilAfiliadoView.fxml"));
 
 	        AnchorPane rootLayout = (AnchorPane)loader.load();
 
@@ -200,6 +231,11 @@ public class Aplicacion extends Application{
 	        primaryStage.setScene(scene);
 	        primaryStage.setTitle("Perfil Afiliado");
 	        primaryStage.setResizable(false);
+			javafx.geometry.Rectangle2D screenBounds = javafx.stage.Screen.getPrimary().getVisualBounds();
+
+			// Calcular la posición centrada
+			primaryStage.setX((screenBounds.getWidth() - rootLayout.getPrefWidth()) / 2);
+			primaryStage.setY((screenBounds.getHeight() - rootLayout.getPrefHeight()) / 2);
 	        primaryStage.show();
 	    } catch (IOException e) {
 	        e.printStackTrace();
@@ -209,7 +245,7 @@ public class Aplicacion extends Application{
 	public void abrirVentanaAfiliacion() {
 		try {
 	        FXMLLoader loader = new FXMLLoader();
-	        loader.setLocation(Aplicacion.class.getResource("/view/AfiliacionView.fxml"));
+	        loader.setLocation(Aplicacion.class.getResource("/multinivel/view/AfiliacionView.fxml"));
 
 	        AnchorPane rootLayout = (AnchorPane)loader.load();
 
@@ -220,6 +256,11 @@ public class Aplicacion extends Application{
 	        primaryStage.setTitle("Afiliate");
 	        primaryStage.setScene(scene);
 	        primaryStage.setResizable(false);
+			javafx.geometry.Rectangle2D screenBounds = javafx.stage.Screen.getPrimary().getVisualBounds();
+
+			// Calcular la posición centrada
+			primaryStage.setX((screenBounds.getWidth() - rootLayout.getPrefWidth()) / 2);
+			primaryStage.setY((screenBounds.getHeight() - rootLayout.getPrefHeight()) / 2);
 	        primaryStage.show();
 	    } catch (IOException e) {
 	        e.printStackTrace();
@@ -239,7 +280,7 @@ public class Aplicacion extends Application{
 		try {
             // Load the fxml file and create a new stage for the popup dialog.
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(Aplicacion.class.getResource("/view/NuevaVentaEmergenteView.fxml"));
+            loader.setLocation(Aplicacion.class.getResource("/multinivel/view/NuevaVentaEmergenteView.fxml"));
             AnchorPane page = (AnchorPane) loader.load();
 
             // Create the dialog Stage.
@@ -274,7 +315,7 @@ public class Aplicacion extends Application{
 		try {
             // Load the fxml file and create a new stage for the popup dialog.
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(Aplicacion.class.getResource("/view/NuevoProductoEmergenteView.fxml"));
+            loader.setLocation(Aplicacion.class.getResource("/multinivel/view/NuevoProductoEmergenteView.fxml"));
             AnchorPane page = (AnchorPane) loader.load();
 
             // Create the dialog Stage.
@@ -305,7 +346,7 @@ public class Aplicacion extends Application{
 		try {
             // Load the fxml file and create a new stage for the popup dialog.
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(Aplicacion.class.getResource("/view/ActualizarProductoEmergenteView.fxml"));
+            loader.setLocation(Aplicacion.class.getResource("/multinivel/view/ActualizarProductoEmergenteView.fxml"));
             AnchorPane page = (AnchorPane) loader.load();
 
             // Create the dialog Stage.
@@ -336,7 +377,7 @@ public class Aplicacion extends Application{
 		try {
             // Load the fxml file and create a new stage for the popup dialog.
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(Aplicacion.class.getResource("/view/DetallesVentaEmergenteView.fxml"));
+            loader.setLocation(Aplicacion.class.getResource("/multinivel/view/DetallesVentaEmergenteView.fxml"));
             AnchorPane page = (AnchorPane) loader.load();
 
             // Create the dialog Stage.
@@ -366,7 +407,7 @@ public class Aplicacion extends Application{
 	public void abrirVentanaReportes() {
 		try {
 	        FXMLLoader loader = new FXMLLoader();
-	        loader.setLocation(Aplicacion.class.getResource("/view/ReportesView.fxml"));
+	        loader.setLocation(Aplicacion.class.getResource("/multinivel/view/ReportesView.fxml"));
 
 	        AnchorPane rootLayout = (AnchorPane)loader.load();
 
@@ -377,6 +418,11 @@ public class Aplicacion extends Application{
 	        primaryStage.setTitle("Reportes");
 	        primaryStage.setScene(scene);
 	        primaryStage.setResizable(false);
+			javafx.geometry.Rectangle2D screenBounds = javafx.stage.Screen.getPrimary().getVisualBounds();
+
+			// Calcular la posición centrada
+			primaryStage.setX((screenBounds.getWidth() - rootLayout.getPrefWidth()) / 2);
+			primaryStage.setY((screenBounds.getHeight() - rootLayout.getPrefHeight()) / 2);
 	        primaryStage.show();
 	    } catch (IOException e) {
 	        e.printStackTrace();
@@ -387,7 +433,7 @@ public class Aplicacion extends Application{
 		try {
             // Load the fxml file and create a new stage for the popup dialog.
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(Aplicacion.class.getResource("/view/ReporteEmergenteView.fxml"));
+            loader.setLocation(Aplicacion.class.getResource("/multinivel/view/ReporteEmergenteView.fxml"));
             AnchorPane page = (AnchorPane) loader.load();
 
             // Create the dialog Stage.

@@ -1,9 +1,9 @@
-package dto;
+package multinivel.dto;
 
 import java.util.ArrayList;
 
-import model.Empleado;
-import model.Producto;
+import multinivel.model.Empleado;
+import multinivel.model.Producto;
 
 public class MapeoDTO {
 

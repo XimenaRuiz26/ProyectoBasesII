@@ -1,4 +1,4 @@
-package services;
+package multinivel.services;
 
 import java.sql.Connection;
 import java.sql.Date;
@@ -7,7 +7,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
-import model.Cliente;
+import multinivel.model.Cliente;
 
 public class ClienteService {
 	public static ArrayList<Cliente> obtenerListaClientes(Connection cx){

@@ -1,4 +1,4 @@
-package connection;
+package multinivel.connection;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -10,7 +10,7 @@ public class DatabaseConnection {
     private String driver = "oracle.jdbc.driver.OracleDriver";
     private Connection cx;
     private String usr = "system";
-    private String passwd = "0426";
+    private String passwd = "2026";
 
     public Connection conectar(){
         try{

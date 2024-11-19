@@ -1,4 +1,4 @@
-package controller;
+package multinivel.controller;
 
 import java.net.URL;
 import java.sql.Date;
@@ -11,8 +11,8 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
-import connection.Aplicacion;
-import model.Empleado;
+import multinivel.connection.Aplicacion;
+import multinivel.model.Empleado;
 
 public class AfiliacionController {
 	Aplicacion aplicacion;

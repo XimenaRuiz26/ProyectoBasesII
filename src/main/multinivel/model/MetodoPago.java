@@ -1,4 +1,4 @@
-package model;
+package multinivel.model;
 
 public class MetodoPago {
 	private int id;

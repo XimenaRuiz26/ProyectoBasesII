@@ -1,13 +1,13 @@
-package services;
+package multinivel.services;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-import model.DescripcionBeneficios;
-import model.DescripcionRequisitos;
-import model.NivelEmpleado;
+import multinivel.model.DescripcionBeneficios;
+import multinivel.model.DescripcionRequisitos;
+import multinivel.model.NivelEmpleado;
 
 public class NivelEmpleadoService {
 	public static NivelEmpleado obtenerNivelEmpleadoById(Connection cx, int idEmpleadoBuscar){

@@ -1,6 +1,6 @@
-package services;
+package multinivel.services;
 
-import model.CategoriaProducto;
+import multinivel.model.CategoriaProducto;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
