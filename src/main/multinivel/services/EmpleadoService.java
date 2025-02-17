@@ -194,7 +194,6 @@ public class EmpleadoService {
 			ps.setString(5, direccion);
 			ps.setString(6, telefono);
 			ps.setString(7, correo);
-
 			ps.executeUpdate();
 			ps.close();
 
